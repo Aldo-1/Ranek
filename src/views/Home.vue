@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <h1>👍Compre ou venda👎</h1>
-    <ProdutosLista/>
     <ProdutosBuscar/>
+    <ProdutosLista/>
   </div>
 </template>
 

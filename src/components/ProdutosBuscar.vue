@@ -1,32 +1,23 @@
 <template>
-  <section class="produtos-container">
-    <div v-for="produto in produtos" :key="produto.id">
-      <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo"/>
-      <p class="preco">{{produto.preco}}</p>
-      <h2 class="titulo">{{produto.nome}}</h2>
-      <p>{{produto.descricao}}</p>
-    </div>
-  </section>
+  <form action="">
+    <input name="busca" id="busca" v-model="busca" type="text">
+    <input type="submit" id="lupa" value="buscar" @click.prevent="buscarProdutos">
+  </form>
 </template>
 
 <script>
 export default {
-  name: "produtobuscar",
+  name: "produtoslista",
   data() {
     return {
-      produtos: []
+      busca: ''
     }
   },
-  methods:{
-    async getProdutos(){
-      const response = await fetch("http://localhost:3000/produto")
-      const data = await response.json()
-      this.produtos = data
+  methods: {
+    buscarProdutos() {
+      this.$router.push({query: {q: this.busca}})
     }
   },
-  created(){
-    this.getProdutos()
-  }
 }
 </script>
 
