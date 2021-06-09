@@ -55,6 +55,7 @@ img{
   padding: 10px 30px;
   background: #87f;
   border-radius: 4px;
+  border: none;
   color: #fff;
   text-align: center;
   font-size: 1rem;
