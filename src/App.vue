@@ -2,7 +2,9 @@
   <div id="app">
     <TheHeader/>
       <main id="main">
-        <router-view/>
+        <transition>
+          <router-view/>
+        </transition>
       </main>
     <TheFooter/>
   </div>
@@ -24,7 +26,9 @@ export default {
 *{
   box-sizing: border-box;
 }
-
+label {
+  margin-bottom: 5px;
+}
 body, ul, li, h1, h2, p{
   margin: 0px;
   padding: 0px;
