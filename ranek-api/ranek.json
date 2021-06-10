@@ -10,6 +10,42 @@
       "numero": "25",
       "estado": "RJ",
       "cidade": "Rio de Janeiro"
+    },
+    {
+      "id": "aldo.wanderley@souunit.com.br",
+      "email": "aldo.wanderley@souunit.com.br",
+      "nome": "Aldo Wanderley Costa Junior",
+      "senha": "",
+      "cep": "49041030",
+      "rua": "Rua José Mesquita Neto",
+      "numero": "123",
+      "bairro": "Inácio Barbosa",
+      "cidade": "Aracaju",
+      "estado": "SE"
+    },
+    {
+      "id": "aldo.wanderley123@souunit.com.br",
+      "email": "aldo.wanderley123@souunit.com.br",
+      "nome": "Aldo Wanderley Costa Junior",
+      "senha": "123",
+      "cep": "49041030",
+      "rua": "Rua José Mesquita Neto",
+      "numero": "123",
+      "bairro": "Inácio Barbosa",
+      "cidade": "Aracaju",
+      "estado": "SE"
+    },
+    {
+      "id": "aldo.wanderley1234@souunit.com.br",
+      "email": "aldo.wanderley1234@souunit.com.br",
+      "nome": "Aldo Wanderley Costa Junior",
+      "senha": "123",
+      "cep": "49041030",
+      "rua": "Rua José Mesquita Neto",
+      "numero": "123",
+      "bairro": "Inácio Barbosa",
+      "cidade": "Aracaju",
+      "estado": "SE"
     }
   ],
   "produto": [
