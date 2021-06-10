@@ -12,12 +12,19 @@
 <script>
 import TheHeader from '@/components/TheHeader'
 import TheFooter from '@/components/TheFooter'
+import api from '@/services.js'
 
 export default {
   name: "App",
   components:{
     TheHeader,
     TheFooter
+  },
+  async created(){
+    if(window.localStorage.token){
+      await api.post('https://ranekapi.origamid.dev/json/jwt-auth/v1/token/validate')
+      this.$store.dispatch('getUsuario')
+    }
   }
 }
 </script>
@@ -53,7 +60,11 @@ img{
   max-width: 100%;
   display: block;
 }
-
+.btn-disabled,
+.btn-disabled:hover{
+  background: #bbc;
+  transform: scale(1);
+}
 .btn{
   display: block;
   padding: 10px 30px;

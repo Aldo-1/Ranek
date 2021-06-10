@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import api from '@/services.js'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -37,11 +38,18 @@ export default new Vuex.Store({
   },
   actions: {
     async getUsuarioProdutos(context){
-      const {data} = await api.get(`/produto?=usuario_id=${context.state.usuario.id}`)
+      const {data} = await api.get(`/produto?usuario_id=${context.state.usuario.id}`)
       context.commit('UPDATE_USUARIO_PRODUTOS', data)
     },
-    async getUsuario(context, payload){
-      const {data} = await api.get(`/usuario/${payload}`)
+    async logarUsuario(context, payload) {
+      const {data} = await axios.post('https://ranekapi.origamid.dev/json/jwt-auth/v1/token', {
+        username: payload.email,
+        password: payload.senha
+      });
+      window.localStorage.token = `Bearer ${data.token}`
+    },
+    async getUsuario(context){
+      const {data} = await api.get(`/usuario`)
       context.commit("UPDATE_USUARIO", data)
       context.commit("UPDATE_LOGIN", true)
     },
@@ -62,6 +70,7 @@ export default new Vuex.Store({
         cidade: "",
         estado: ""
       })
+      window.localStorage.removeItem('token')
       context.commit("UPDATE_LOGIN", false)
     }
   },

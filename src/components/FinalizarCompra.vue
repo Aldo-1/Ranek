@@ -2,7 +2,7 @@
   <section>
     <h2>Endereço de envio</h2>
     <usuario-form>
-      <button class="btn" @click="finalizarCompra">Finalizar Compra</button>
+      <button class="btn" @click.prevent="finalizarCompra">Finalizar Compra</button>
     </usuario-form>
   </section>
 </template>
@@ -42,13 +42,14 @@ export default {
     async criarUsuario() {
       try{
         await this.$store.dispatch("criarUsuario", this.$store.state.usuario)
-        await this.$store.dispatch("getUsuario", this.$store.state.usuario.email)
+        await this.$store.dispatch("logarUsuario", this.$store.state.usuario)
+        await this.$store.dispatch("getUsuario")
         this.criarTransacao()
       }catch(error){
         console.log(error)
       }
     },
-    finalizarCompras(){
+    finalizarCompra(){
       if(this.$store.state.login){
         this.criarTransacao()
       }else{

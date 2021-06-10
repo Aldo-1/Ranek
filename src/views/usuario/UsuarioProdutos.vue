@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Adicioanr Produtos</h2>
+    <h2>Adicionar Produtos</h2>
     <ProdutoAdicionar/>
     <h2>Seus Produtos</h2>
     <transition-group v-if="usuario_produtos" name="list" tag='ul'>

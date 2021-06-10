@@ -12,7 +12,7 @@ export default {
   methods: {
     async atualizarUsuario() {
       try{
-        await api.put(`/usuario/${this.$store.state.usuario.id}`, this.$store.state.usuario)
+        await api.put(`/usuario`, this.$store.state.usuario)
         this.$store.dispatch("getUsuario")
         this.$router.push('/usuario')
       }catch(err){
