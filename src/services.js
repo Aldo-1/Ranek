@@ -5,3 +5,7 @@ const axiosURL = axios.create({
 })
 
 export default axiosURL
+
+export function getCep(cep){
+  return axios.get(`https://viacep.com.br/ws/${cep}/json`)
+}
