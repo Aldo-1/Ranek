@@ -6,8 +6,8 @@
     <transition-group v-if="usuario_produtos" name="list" tag='ul'>
       <li v-for="(produto, index) in usuario_produtos" :key="index">
         <ProdutoItem :produto="produto">
-        <p>{{produto.descricao}}</p>
-        <button class="deleter" @click="deletarProduto(produto.id)"></button>
+          <p>{{produto.descricao}}</p>
+          <button class="deletar" @click="deletarProduto(produto.id)">Deletar</button>
         </ProdutoItem>
         
       </li>
@@ -29,9 +29,9 @@ export default {
     ProdutoItem
   },
   computed:{
-    ...mapState(["login", "usuario", "usuario_produtos"]),
+    ...mapState(["login", "usuario", "usuario_produtos"])
   },
-  methdos:{
+  methods:{
     ...mapActions(["getUsuarioProdutos"]),
     async deletarProduto(id){
       const confirmar = window.confirm("Deseja remover o produto?")
