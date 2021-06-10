@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     async criarTransacao() {
-      await api.post("/transao", this.compra)
+      await api.post("/transacao", this.compra)
       this.$router.push({name: "compras"})
     },
     async criarUsuario() {
