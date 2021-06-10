@@ -2,7 +2,7 @@
   <div id="app">
     <TheHeader/>
       <main id="main">
-        <transition>
+        <transition mode="out-in">
           <router-view/>
         </transition>
       </main>

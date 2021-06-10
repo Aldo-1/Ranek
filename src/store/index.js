@@ -33,7 +33,25 @@ export default new Vuex.Store({
       const {data} = await api.get(`/usuario/${payload}`)
       context.commit("UPDATE_USUARIO", data)
       context.commit("UPDATE_LOGIN", true)
-
+    },
+    async criarUsuario(context,payload){
+      context.commit("UPDATE_USUARIO", {id: payload.email})
+      await api.post(`/usuario`, payload)
+    },
+    deslogarUsuario(context){
+      context.commit("UPDATE_USUARIO", {
+        id: "",
+        email: "",
+        nome:"",
+        senha:"",
+        cep: "",
+        rua: "",
+        numero: "",
+        bairro: "",
+        cidade: "",
+        estado: ""
+      })
+      context.commit("UPDATE_LOGIN", false)
     }
   },
   modules: {
