@@ -33,7 +33,6 @@ export default {
   methods: {
     async getProduto() {
       const {data} = await api.get(`/produto/${this.id}`)
-      console.log(data)
       this.produto = data
     }
   },
