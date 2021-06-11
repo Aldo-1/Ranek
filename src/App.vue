@@ -104,6 +104,7 @@ input, textarea{
   box-shadow: 0 4px 8px rgba(30,60, 90, 0.1);
   font-family: "Avenir", Arial, Helvetica, sans-serif;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 input:hover,input:focus, textarea:focus, textarea:hover{
